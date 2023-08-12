@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Connecting to Amazon ECR...
       - aws --version
-      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/j8d1z7e0
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 980694268678.dkr.ecr.us-east-1.amazonaws.com
       - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - REPOSITORY_URI=561141209444.dkr.ecr.us-east-1.amazonaws.com/todo-application
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
